@@ -54,7 +54,7 @@ $book->author_id = $request->author_id;
 
 $book->save();
 
-return redirect()->route('book.index');
+return redirect()->route('book.index')->with('success_message', 'Sekmingai įrašytas.');
     }
 
     /**
@@ -102,7 +102,7 @@ $book->author_id = $request->author_id;
 
 $book->save();
 
-return redirect()->route('book.index');
+return redirect()->route('book.index')->with('success_message', 'Sėkmingai pakeistas.');
     }
 
     /**
@@ -115,6 +115,6 @@ return redirect()->route('book.index');
     {
         $book->delete();
 
-return redirect()->route('book.index');
+        return redirect()->route('book.index')->with('success_message', 'Sekmingai ištrintas.');
     }
 }
