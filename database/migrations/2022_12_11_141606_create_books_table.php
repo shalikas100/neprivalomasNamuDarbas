@@ -19,7 +19,7 @@ class CreateBooksTable extends Migration
 
             $table->bigIncrements('id');
             $table->unsignedBigInteger('author_id');
-            // $table->foreign('author_id')->references('id')->on('author');
+            $table->foreign('author_id')->references('id')->on('authors');
             $table->string('title');
             $table->string('isbn');
             $table->string('pages');
